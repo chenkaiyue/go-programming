@@ -30,6 +30,7 @@ func main(){
 	for post:=1;post<=taskLoad;post++{
 		tasks <- fmt.Sprintf("task: %d",post)
 	}
+	//关闭之后禁止再向通道中写入数据
 	close(tasks)
 
 	wg.Wait()

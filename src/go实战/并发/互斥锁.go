@@ -29,6 +29,8 @@ func inCounter(id int){
 		mutex.Lock()
 		{
 			value := counter
+
+			//当前goroutien从线程退出，并放回到队列
 			runtime.Gosched()
 			value++
 			counter = value
